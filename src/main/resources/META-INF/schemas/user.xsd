@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://example.com/user"
+           targetNamespace="http://example.com/user"
+           elementFormDefault="qualified">
+
+    <!-- 사용자 요청 -->
+    <xs:element name="getUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- 사용자 응답 -->
+    <xs:element name="getUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- 사용자 정보 -->
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="userName" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phoneNumber" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
